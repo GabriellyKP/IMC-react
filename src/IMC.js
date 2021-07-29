@@ -2,6 +2,7 @@ import { Box, Button, Paper, TextField} from '@material-ui/core'
 import React, {useState} from 'react'
 import Tabela from './Tabela'
 
+
 export default function IMC() {
 
   let novaPessoa = {
@@ -93,24 +94,59 @@ export default function IMC() {
 
   return (
     <div>
-      <Paper >
-      <Box fontSize={30} textAlign="center"  bgcolor= "#F6D27E" color="text.primary" fontFamily="Monospace">Calculadora IMC </Box>
-      </Paper>
-      <Box display='flex' justifyContent="center" flexDirection='column' alignItems="center">
-        <TextField label='Digite seu nome' value={Pessoa?.nome} onChange={event => AlterarNome(event)} type='text' size='medium'/> <br />
-        <TextField label='Digite sua idade' value={Pessoa?.idade} onChange={event => AlterarIdade(event)} type='number' /> <br />
-        <TextField label='Digite sua altura' value={Pessoa?.altura} onChange={event => AlterarAltura(event)} type='number' /> <br />
-        <TextField label='Digite seu peso' value={Pessoa?.peso} onChange={event => AlterarPeso(event)} type='number' />
-        <br />
+      
+      <Box fontSize={30} 
+      textAlign="center"  
+      bgcolor= "#CDCACA" 
+      color="text.primary" 
+      fontFamily="Monospace"
+      >
+        Calculadora IMC 
       </Box>
+     
+      <Box display='flex' justifyContent="center" flexDirection='column' alignItems="center">
+
+        <TextField 
+        label='Digite seu nome' 
+        value={Pessoa?.nome} 
+        onChange={event => AlterarNome(event)} 
+        type='text' 
+        size='medium'/> <br />
+
+        <TextField 
+        label='Digite sua idade' 
+        value={Pessoa?.idade} 
+        onChange={event => AlterarIdade(event)} 
+        type='number' /> <br />
+
+        <TextField 
+        label='Digite sua altura' 
+        value={Pessoa?.altura} 
+        onChange={event => AlterarAltura(event)} 
+        type='number' /> <br />
+
+        <TextField 
+        label='Digite seu peso' 
+        value={Pessoa?.peso} 
+        onChange={event => AlterarPeso(event)} 
+        type='number' />
+        <br />
+
+      </Box>
+      
       <br/>
-      <Box display='flex' justifyContent="center">
+
+      <Box display='flex' justifyContent="center" alignItems="space-between">
       <Button variant="contained" color="primary" onClick={conta}>Calcular</Button>
       <Button variant="contained" color="secondary" onClick={LimparDados}>Limpar</Button>
       </Box>
+      
 
-      <Box display='flex' flexDirection='column' justifyContent="center">
-        <br />
+      <Box p={2} 
+      display='flex' 
+      flexDirection='column' 
+      justifyContent="center" 
+      bgcolor= "#CDCACA">
         <Paper >
        <Tabela visualizarDados={Armazenamento}/>
         </Paper>
